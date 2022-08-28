@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "236662203991",
+    "project_id": "panenpanen-10ad9",
+    "storage_bucket": "panenpanen-10ad9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236662203991:android:d78877d48b97ea3ce9a512",
+        "android_client_info": {
+          "package_name": "com.panenpanen.marketplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236662203991-0741r2ss4ksroo57ihc8a7kfst8fdsaj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV4D2t0nlFluOwzicUcQStTMTrbluYGXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236662203991-0741r2ss4ksroo57ihc8a7kfst8fdsaj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
