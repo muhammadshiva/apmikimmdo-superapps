@@ -4,8 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -38,6 +38,7 @@ import 'package:marketplace/ui/screens/screens.dart';
 import 'package:marketplace/ui/widgets/a_app_config.dart';
 import 'package:marketplace/utils/colors.dart' as AppColor;
 import 'package:marketplace/utils/transitions.dart' as AppTrans;
+import 'package:marketplace/env/env.dart' as AppEnv;
 
 import 'app_bloc_observer.dart';
 import 'data/blocs/new_cubit/bagikan_produk/bagikan_produk_cubit.dart';
@@ -88,7 +89,7 @@ void main() async {
   String appName;
   AppType appType;
 
-  await DotEnv.load(fileName: ".env");
+  // await DotEnv.load(fileName: ".env");
   appName = "Apmikimmdo";
   appType = AppType.apmikimmdo;
 
@@ -411,8 +412,10 @@ class _MyAppState extends State<MyApp> {
 
 class Config {
   static final String baseUrl =
-      kDebugMode ? env['BASE_URL_DEBUG'] : env['BASE_URL'];
-  static final String adsKey = kDebugMode ? env['ADS_KEY'] : env['ADS_KEY'];
+      kDebugMode ? AppEnv.BASE_URL_DEBUG : AppEnv.BASE_URL;
+  static final String adsKey =
+      kDebugMode ? AppEnv.BASE_URL_DEBUG : AppEnv.ADS_KEY;
+
 }
 
 class StatefulDragArea extends StatefulWidget {
