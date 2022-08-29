@@ -237,9 +237,9 @@ class _TransaksiScreenState extends State<TransaksiScreen> {
                           builder: (context, state) {
                             if (state
                                 is FetchTransactionMenungguPembayaranFailure) {
-                              return Text(
-                                  // "Tidak dapat mendapatkan data transaksi"
-                                  "");
+                              return Text("${state.message}");
+                              // Text("Tidak dapat memuat data transaksi");
+
                             }
                             if (state
                                 is FetchTransactionMenungguPembayaranSuccess) {
