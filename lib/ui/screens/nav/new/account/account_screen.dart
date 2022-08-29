@@ -326,9 +326,18 @@ class _AccountScreenState extends State<AccountScreen> {
                           SizedBox(
                             height: 3,
                           ),
-                          Text(
-                            "${userDataCubit.state.user.phonenumber}",
-                            style: AppTypo.caption,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "+",
+                                style: AppTypo.caption,
+                              ),
+                              Text(
+                                "${userDataCubit.state.user.phonenumber}",
+                                style: AppTypo.caption,
+                              ),
+                            ],
                           ),
                           UiDebugSwitcher(
                             child: Column(
