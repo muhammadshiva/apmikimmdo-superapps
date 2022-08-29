@@ -543,7 +543,8 @@ class _AddressEntryScreenState extends State<AddressEntryScreen> {
             children: [
               Container(
                 height: MediaQuery.of(context).size.height * 0.75,
-                constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.75),
+                constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height * 0.75),
                 padding: EdgeInsets.all(16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -581,8 +582,8 @@ class _AddressEntryScreenState extends State<AddressEntryScreen> {
                       },
                     ),
                     Expanded(
-                      child:
-                          BlocBuilder<KecamatanSearchCubit, KecamatanSearchState>(
+                      child: BlocBuilder<KecamatanSearchCubit,
+                          KecamatanSearchState>(
                         builder: (context, state) {
                           if (state is KecamatanSearchLoading) {
                             return Center(
@@ -618,8 +619,8 @@ class _AddressEntryScreenState extends State<AddressEntryScreen> {
                                     ),
                                     title: Text(
                                       "${items[i].subdistrictName}, ${items[i].type} ${items[i].city}, ${items[i].province}",
-                                      style: AppTypo.body1Lato
-                                          .copyWith(fontWeight: FontWeight.w600),
+                                      style: AppTypo.body1Lato.copyWith(
+                                          fontWeight: FontWeight.w600),
                                     ),
                                     minLeadingWidth: 5,
                                     contentPadding: EdgeInsets.zero,
