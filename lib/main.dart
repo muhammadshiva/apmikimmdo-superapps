@@ -413,9 +413,7 @@ class _MyAppState extends State<MyApp> {
 class Config {
   static final String baseUrl =
       kDebugMode ? AppEnv.BASE_URL_DEBUG : AppEnv.BASE_URL;
-  static final String adsKey =
-      kDebugMode ? AppEnv.BASE_URL_DEBUG : AppEnv.ADS_KEY;
-
+  static final String adsKey = kDebugMode ? AppEnv.ADS_KEY : AppEnv.ADS_KEY;
 }
 
 class StatefulDragArea extends StatefulWidget {
