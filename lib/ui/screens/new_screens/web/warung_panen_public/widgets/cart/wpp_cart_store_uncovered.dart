@@ -57,7 +57,7 @@ class WppCartStoreUncovered extends StatelessWidget {
                   productId: cart[p].productId,
                   indexStore: indexStore,
                   indexItem: p,
-                  variantSelected: cart[p].variantSelectedNoAuth != null ? cart[p].variantSelectedNoAuth.variantName : null,
+                  variantSelected: cart[p].variantSelected != null ? cart[p].variantSelected.variantName : null,
                   image: "images/img_outofstock.png",
                   nama: cart[p].product.name,
                   harga: cart[p].product.sellingPrice,

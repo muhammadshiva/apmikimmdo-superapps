@@ -72,26 +72,26 @@ class ProductsCart {
     @required this.quantity,
     @required this.productId,
     @required this.product,
-    this.variantSelectedNoAuth
+    this.variantSelected
   });
 
   final int id;
   final int quantity;
   final int productId;
   final Products product;
-  final ProductsCartVariantSelectedNoAuth variantSelectedNoAuth;
+  final ProductVariant variantSelected;
 
   factory ProductsCart.fromJson(Map<String, dynamic> json) => ProductsCart(
         id: json["id"],
         quantity: json["quantity"],
         productId: json["product_id"],
         product: Products.fromJson(json["product"]),
-        variantSelectedNoAuth: json["variantSelected"] != null ?  ProductsCartVariantSelectedNoAuth.fromJson(json["variantSelected"]) : null
+        variantSelected: json["variantSelected"] != null ?  ProductVariant.fromJson(json["variantSelected"]) : null
       );
 
   @override
   String toString() {
-    return 'ProductsCart{quantity: $quantity, productId: $productId, cartId $id, product $product, variantSelected: $variantSelectedNoAuth}';
+    return 'ProductsCart{quantity: $quantity, productId: $productId, cartId $id, product $product, variantSelected: $variantSelected}';
   }
 }
 

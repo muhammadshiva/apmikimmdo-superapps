@@ -151,14 +151,14 @@ class _WppCartWebScreenState extends State<WppCartWebScreen> {
             id: newProduct.productId,
             stock: newProduct.product.stock,
             name: newProduct.product.name,
-            variantSelectedNoAuth: newProduct.variantSelectedNoAuth != null
-                ? newProduct.variantSelectedNoAuth
+            variantSelected: newProduct.variantSelected != null
+                ? newProduct.variantSelected
                 : null,
             enduserPrice:
-            newProduct.product.disc > 0 || newProduct.product.disc != null ?
+            newProduct.product.disc > 0 ?
             newProduct.product.discPrice : newProduct.product.sellingPrice,
             initialPrice:
-             newProduct.product.disc > 0 || newProduct.product.disc != null ?
+             newProduct.product.disc > 0 ?
             newProduct.product.discPrice : newProduct.product.sellingPrice,
             productPhoto: newProduct.product.productPhoto[0].image,
             quantity: stateStore[c].item[i].qty,

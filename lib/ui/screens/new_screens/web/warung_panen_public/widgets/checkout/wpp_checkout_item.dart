@@ -143,8 +143,8 @@ class _WppCheckoutItemState extends State<WppCheckoutItem> {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                 ),
-                                cartProduct2.variantSelectedNoAuth != null
-                                    ? Text(cartProduct2.variantSelectedNoAuth.variantName)
+                                cartProduct2.variantSelected != null
+                                    ? Text(cartProduct2.variantSelected.variantName)
                                     : SizedBox(),
                                 SizedBox(
                                   height: 5,

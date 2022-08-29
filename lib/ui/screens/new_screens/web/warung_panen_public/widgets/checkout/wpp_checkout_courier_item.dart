@@ -182,7 +182,7 @@ class _WppCheckoutCourierItemState extends State<WppCheckoutCourierItem> {
                                       width: 25,
                                       child: CircularProgressIndicator(
                                           valueColor: AlwaysStoppedAnimation(
-                                              AppColor.primary))),
+                                              AppColor.success))),
                                 ),
                               )
                             : SizedBox.shrink()

@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 import 'package:marketplace/data/blocs/new_cubit/recipent/fetch_selected_recipent/fetch_selected_recipent_cubit.dart';
 import 'package:marketplace/data/blocs/new_cubit/reseller_shop/fetch_data_reseller_shop/fetch_data_reseller_shop_cubit.dart';
 import 'package:marketplace/data/blocs/new_cubit/reseller_shop/fetch_products_reseller_shop/fetch_products_reseller_shop_cubit.dart';
-import 'package:marketplace/data/blocs/new_cubit/toko_saya/fetch_product_toko_saya/fetch_product_toko_saya_cubit.dart';
 import 'package:marketplace/data/blocs/new_cubit/toko_saya/remove_product_toko_saya/remove_product_toko_saya_cubit.dart';
 import 'package:marketplace/data/blocs/user_data/user_data_cubit.dart';
 import 'package:marketplace/data/blocs/new_cubit/cart/update_quantity/update_quantity_cubit.dart';
@@ -224,8 +223,8 @@ class _WppDashboardWarungWebScreenState
                   leading: Padding(
                       padding: const EdgeInsets.only(
                           bottom: 11, top: 4, left: 10, right: 10),
-                      child: WebsafeSvg.asset(AppImg.ic_apmikimmdo,
-                          width: 30, height: 30, color: AppColor.primary)),
+                      child: WebsafeSvg.asset(AppImg.ic_logo_small,
+                          width: 30, height: 30)),
                   titleSpacing: 0,
                   title: Container(
                     height: 50,

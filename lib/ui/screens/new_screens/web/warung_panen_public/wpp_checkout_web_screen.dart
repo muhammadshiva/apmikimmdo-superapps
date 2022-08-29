@@ -469,7 +469,7 @@ class _WppCheckoutWebScreenState
                                           widget.cart.length,
                                       label: "Pembayaran",
                                       isCompact: true,
-                                      color: AppColor.bgBadgePink,
+                                      color: AppColor.bgBadgeLightGreen,
                                       textColor: AppColor.appPrimary,
                                       isUpperCase: false,
                                       elevation: 6,

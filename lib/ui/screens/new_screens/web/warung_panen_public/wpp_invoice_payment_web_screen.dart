@@ -217,7 +217,7 @@ class _WppInvoicePaymentWebScreenState
       backgroundColor: AppColor.navScaffoldBg,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Invoice Reseller', style: AppTypo.subtitle2),
+        title: Text('Invoice Warung Panen', style: AppTypo.subtitle2),
         centerTitle: true,
         backgroundColor: Colors.white,
         brightness: Brightness.light,
@@ -732,7 +732,7 @@ class _WppInvoicePaymentWebScreenState
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Text(
                         // '',
-                        "${item.name} ${item.variantSelectedNoAuth != null ? item.variantSelectedNoAuth.variantName : ''}",
+                        "${item.name} ${item.variantSelected != null ? item.variantSelected.variantName : ''}",
                         style: AppTypo.overline.copyWith(
                           fontWeight: FontWeight.w700,
                           color: AppColor.primary,

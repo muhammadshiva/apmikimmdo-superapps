@@ -495,7 +495,7 @@ class _JoinUserAddProductScreenState extends State<JoinUserAddProductScreen> {
                             );
                           }
                           return RoundedButton.contained(
-                            disabled: inputNotValid,
+                            // disabled: inputNotValid,
                             isUpperCase: false,
                             textColor: Colors.white,
                             onPressed: () {

@@ -14,6 +14,7 @@ import 'package:marketplace/data/models/models.dart';
 import 'package:marketplace/ui/screens/new_screens/web/warung_panen_public/wpp_alamat_pelanggan_screen.dart';
 import 'package:marketplace/ui/screens/sign_in_screen.dart';
 import 'package:marketplace/ui/widgets/bs_feedback.dart';
+import 'package:marketplace/ui/widgets/bs_select_variant.dart';
 import 'package:marketplace/ui/widgets/loading_dialog.dart';
 import 'package:marketplace/ui/widgets/widgets.dart';
 import 'package:marketplace/utils/colors.dart' as AppColor;
@@ -43,15 +44,19 @@ class WppProductDetailBody extends StatefulWidget {
 }
 
 class _WppProductDetailBodyState extends State<WppProductDetailBody> {
-  AddProductTokoSayaCubit _addProductTokoSayaCubit;
 
-  ProductsCartVariantSelectedNoAuth variantSelected ;
-  bool buttonBeliEnabled = true;
+  ProductVariant _productVariantSelected;
+
+  @override
+  void initState() {
+   _productVariantSelected = widget.product.productVariant.length > 0 ? widget.product.productVariant[0] : null;
+    super.initState();
+  }
 
   _handleAddToCartOffline({
     @required Products product,
     @required int productId,
-    @required ProductsCartVariantSelectedNoAuth variantSelected,
+    @required ProductVariant variantSelected,
     // int categoryId,
   }) {
     context
@@ -63,7 +68,7 @@ class _WppProductDetailBodyState extends State<WppProductDetailBody> {
         );
     final data = context.read<AddToCartOfflineCubit>().state;
     BSFeedback.showFeedBackShop(context,
-        color: AppColor.primary,
+        color: AppColor.success,
         title: "Produk berhasil ditambahkan ke keranjang",
         description:
             "Silahkan checkout untuk melakukan pembelian");
@@ -82,30 +87,6 @@ class _WppProductDetailBodyState extends State<WppProductDetailBody> {
         description: "Halaman atau koneksi internet bermasalah",
       );
     }
-  }
-
-  @override
-  void initState() {
-    _addProductTokoSayaCubit = AddProductTokoSayaCubit();
-    variantSelected = null;
-    if (widget.product.productVariant.length > 0) {
-      buttonBeliEnabled = false;
-    }else{
-      buttonBeliEnabled = true;
-    }
-    super.initState();
-  }
-
-  // void addProductPhoto() {
-  //   for (var i = 0; i < widget.product.productPhoto.length; i++) {
-  //     imageProduct.add(widget.product.productPhoto[i].image);
-  //   }
-  // }
-
-  @override
-  void dispose() {
-    _addProductTokoSayaCubit.close();
-    super.dispose();
   }
 
   @override
@@ -130,11 +111,9 @@ class _WppProductDetailBodyState extends State<WppProductDetailBody> {
                         ),
                         WppProductDetailDetailScreenList(
                           product: widget.product,
-                          isPublicResellerShop: widget.isPublicResellerShop,
-                          onVariantSelected: (data){
+                          onVariantSelected: (ProductVariant productVariantSelected){
                             setState(() {
-                              variantSelected = data;
-                              buttonBeliEnabled = true;
+                               _productVariantSelected = productVariantSelected;
                             });
                           },
                         ),
@@ -151,7 +130,7 @@ class _WppProductDetailBodyState extends State<WppProductDetailBody> {
                   _launchUrl(
                       "https://api.whatsapp.com/send?phone=${widget.product.supplier.phone}");
                 },
-                isButtonBeliEnable: buttonBeliEnabled,
+                isButtonBeliEnable: true,
                 onPressed: () {
                   if (widget.product.stock == 0) {
                     BSFeedback.show(context,
@@ -160,13 +139,24 @@ class _WppProductDetailBodyState extends State<WppProductDetailBody> {
                         description: "Stok barang habis",
                         icon: Icons.cancel_outlined);
                   } else {
-                    debugPrint("FOOTERNYA WEB");
-                    _handleAddToCartOffline(
-                            product: widget.product,
-                            productId: widget.productId,
-                            variantSelected: variantSelected != null ? ProductsCartVariantSelectedNoAuth(isVariant: variantSelected != null ? 1 : 0, variantId: variantSelected.variantId, variantName: variantSelected.variantName) : null
-                            // categoryId: widget.categoryId
-                          );
+                    if (widget.product.productVariant.length > 0) {
+                            BsSelectVariant().showBsReview(context,
+                            listVariant:widget.product.productVariant, 
+                            variantSelected: _productVariantSelected,
+                            onVariantSelected: (int val,ProductVariant val2){
+                              AppExt.popScreen(context);
+                              _handleAddToCartOffline(product: widget.product, productId: widget.productId, variantSelected: val2);
+                            });
+                          } else {
+                            _handleAddToCartOffline(product: widget.product, productId: widget.productId, variantSelected: _productVariantSelected);
+                          }
+                    // debugPrint("FOOTERNYA WEB");
+                    // _handleAddToCartOffline(
+                    //         product: widget.product,
+                    //         productId: widget.productId,
+                    //         variantSelected: _productVariantSelected != null ? _productVariantSelected : null
+                    //         // categoryId: widget.categoryId
+                    //       );
                   }
                 },
               ),

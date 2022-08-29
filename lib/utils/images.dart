@@ -31,6 +31,7 @@ const ic_transactionactive = "images/icons/ic_transactionactive.svg";
 const ic_profilemenu = "images/icons/ic_profilemenu.svg";
 const ic_profileactive = "images/icons/ic_profileactive.svg";
 const ic_add_shop_product = "images/icons/ic_add_shop_product.svg";
+const ic_logo_small = "images/icons/logo_apmikimmdo.svg";
 
 // image
 const img_clock = "images/img_clock.png";

@@ -197,7 +197,7 @@ class CartProduct {
     @required this.productPhoto,
     @required this.enduserPrice,
     this.productVariantName,
-     this.variantSelectedNoAuth,
+     this.variantSelected,
     @required this.initialPrice,
     @required this.stock,
     @required this.weight,
@@ -218,7 +218,7 @@ class CartProduct {
   final String unit;
   final String productVariantName; 
   int quantity;
-  final ProductsCartVariantSelectedNoAuth variantSelectedNoAuth;
+  final ProductVariant variantSelected;
   final List<ProductGroceries> wholesale;
 
   factory CartProduct.fromJson(Map<String, dynamic> json) => CartProduct(
@@ -232,7 +232,7 @@ class CartProduct {
         weight: json["weight"],
         quantity: json["quantity"],
         unit: json["unit"] ?? null,
-        variantSelectedNoAuth:  json["product_variant_selected"] != null ?  ProductsCartVariantSelectedNoAuth.fromJson(json["product_variant_selected"]) : null ,
+        variantSelected:  json["product_variant_selected"] != null ?  ProductVariant.fromJson(json["product_variant_selected"]) : null ,
         wholesale: json["grocirs"] == null
             ? []
             : json["grocirs"].length == 0
@@ -257,14 +257,14 @@ class CartProduct {
         "weight": weight,
         "quantity": quantity,
         "unit": unit ?? null,
-        "product_variant_selected": variantSelectedNoAuth,
+        "product_variant_selected": variantSelected,
         "grocirs": List<dynamic>.from(wholesale.map((x) => x.toJson())),
         // "coverage": List<dynamic>.from(coverage.map((x) => x.toJson())),
       };
 
   @override
   String toString() {
-    return 'CartProduct{id: $id, cartId: $cartId, name: $name, productPhoto: $productPhoto, enduserPrice: $enduserPrice, initialPrice: $initialPrice, stock: $stock, weight: $weight, unit: $unit, quantity: $quantity, variantselected: $variantSelectedNoAuth, wholesale: ${wholesale.length},}';
+    return 'CartProduct{id: $id, cartId: $cartId, name: $name, productPhoto: $productPhoto, enduserPrice: $enduserPrice, initialPrice: $initialPrice, stock: $stock, weight: $weight, unit: $unit, quantity: $quantity, variantselected: $variantSelected, wholesale: ${wholesale.length},}';
   }
 }
 
