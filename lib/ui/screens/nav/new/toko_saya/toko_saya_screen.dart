@@ -65,8 +65,10 @@ class _TokoSayaScreenState extends State<TokoSayaScreen> {
   // }
 
   void shareShop(String nameShop, String slug) {
+    // Share.share(
+    //     "Yuk belanja di *${nameShop ?? 'user'}* Banyak produk baru dan promo lho! Klik disini \n https://warung.panenpanen.id/wpp/dashboard/$slug");
     Share.share(
-      "Yuk belanja di *${nameShop ?? 'user'}* Banyak produk baru dan promo lho! Klik disini \n https://warung.panenpanen.id/wpp/dashboard/$slug");
+        "Yuk belanja di *${nameShop ?? 'user'}* Banyak produk baru dan promo lho! Klik disini \n https://reseller.apmikimmdo.com/wpp/dashboard/$slug");
   }
 
   Future refreshData() async {
@@ -324,7 +326,7 @@ class _TokoSayaScreenState extends State<TokoSayaScreen> {
                                                                             ),
                                                                             GestureDetector(
                                                                               onTap: () {
-                                                                                shareShop(fetchUserState.user.data.reseller.name ?? 'user',fetchUserState.user.data.reseller.slug);
+                                                                                shareShop(fetchUserState.user.data.reseller.name ?? 'user', fetchUserState.user.data.reseller.slug);
                                                                               },
                                                                               child: Container(
                                                                                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 7),
