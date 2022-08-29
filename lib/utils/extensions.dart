@@ -288,7 +288,7 @@ String formatPhoneNumber(String phone) {
 
 String removeCodePhone(String phone) {
   String changeToZero = phone.substring(0, 2).replaceAll("62", "");
-  return "$changeToZero${phone.substring(2, phone.length - 1)}";
+  return "$changeToZero${phone.substring(2, phone.length)}";
 }
 
 Future<bool> _requestPermission(Permission permission) async {
