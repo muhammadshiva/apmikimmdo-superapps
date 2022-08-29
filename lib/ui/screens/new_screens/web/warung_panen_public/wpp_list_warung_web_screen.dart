@@ -86,7 +86,7 @@ class _WppListWarungWebScreenState extends State<WppListWarungWebScreen> {
                       child: Center(
                         child: EditText(
                           controller: _searchController,
-                          hintText: "Cari warung ...",
+                          hintText: "Cari reseller ...",
                           inputType: InputType.search,
                           focusNode: _focusNode,
                           onChanged: this._onSearchChanged,
@@ -141,9 +141,9 @@ class _WppListWarungWebScreenState extends State<WppListWarungWebScreen> {
                                         })
                                     : Center(
                                         child: EmptyData(
-                                            title: "Warung tidak ditemukan",
+                                            title: "Reseller tidak ditemukan",
                                             subtitle:
-                                                "Belum ada warung pada wilayah ini"))
+                                                "Belum ada reseller pada wilayah ini"))
                                 : SizedBox())),
           ),
         ),

@@ -36,7 +36,7 @@ class _WppHomepageWebScreenState extends State<WppHomepageWebScreen> {
                 children: [
                   Image.asset(AppImg.img_delivery_road,width: 300,),
                   SizedBox(height: 20,),
-                  Text("Mau kirim belanjaan kemana (UPDATE2)",style: AppTypo.LatoBold.copyWith(fontSize: 20,color: AppColor.primary),),
+                  Text("Mau kirim belanjaan kemana",style: AppTypo.LatoBold.copyWith(fontSize: 20,color: AppColor.primary),),
                   SizedBox(height: 6,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -126,7 +126,7 @@ class _WppHomepageWebScreenState extends State<WppHomepageWebScreen> {
                         );
                       }
                       if (state is KecamatanSearchFailure) {
-                        return Text("Failure");
+                        return Text(state.message);
                       }
                       if (state is KecamatanSearchSuccess) {
                         final items = state.result;

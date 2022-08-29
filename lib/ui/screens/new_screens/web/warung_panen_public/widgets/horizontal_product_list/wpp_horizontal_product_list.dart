@@ -80,7 +80,7 @@ class WppHorizontalProductList extends StatelessWidget {
                             "Lihat Semua",
                             textAlign: TextAlign.right,
                             style: AppTypo.LatoBold.copyWith(
-                                color: AppColor.primary,
+                                color: AppColor.success,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 13,
                                 decoration: TextDecoration.underline),

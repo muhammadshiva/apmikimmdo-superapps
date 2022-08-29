@@ -252,8 +252,8 @@ class _WppPaymentWebScreenState
                                                                 style: AppTypo.body2Lato
                                                                     .copyWith(
                                                                         fontSize: 14)),
-                                                            cartProduct.variantSelectedNoAuth != null ?
-                                                        Text(cartProduct.variantSelectedNoAuth.variantName) : SizedBox()
+                                                            cartProduct.variantSelected != null ?
+                                                        Text(cartProduct.variantSelected.variantName) : SizedBox()
                                                           ],
                                                         ),
                                                       ),

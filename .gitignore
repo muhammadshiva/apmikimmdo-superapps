@@ -48,5 +48,6 @@ app.*.map.json
 .fvm/flutter_sdk
 .vscode/settings.json
 
+lib/env/env.dart
 .env
 key.jks

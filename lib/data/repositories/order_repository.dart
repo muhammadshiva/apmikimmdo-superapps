@@ -88,7 +88,7 @@ class OrderRepository {
       debugPrint("CHECK NOTES" + notes.toString());
       debugPrint("CHECK ONGKIRS" + ongkirs.toString());
       debugPrint("CHECK SHIPPINGCODES" + shppingCodes.toString());
-      debugPrint("CHECK PRODUCTS" + carts[0].product.map((e) => ProductAddOrderNoAuth(productId: e.id, isVariant: e.variantSelectedNoAuth != null ? 1 : 0  , variantId: e.variantSelectedNoAuth != null ? e.variantSelectedNoAuth.variantId : 0,quantity: e.quantity)).toList().toString());
+      debugPrint("CHECK PRODUCTS" + carts[0].product.map((e) => ProductAddOrderNoAuth(productId: e.id, isVariant: e.variantSelected != null ? 1 : 0  , variantId: e.variantSelected != null ? e.variantSelected.id : 0,quantity: e.quantity)).toList().toString());
 
     List<CartTempAddOrderNoAuth> cartsTemp = [];
     debugPrint("COK 1");
@@ -98,7 +98,7 @@ class OrderRepository {
           ongkir: ongkirs[i].ongkir, 
           shippingCode: shppingCodes[i].shippingCode, 
           note: notes[i].note, 
-          products: carts[i].product.map((e) => ProductAddOrderNoAuth(productId: e.id, isVariant: e.variantSelectedNoAuth != null ? 1 : 0, variantId: e.variantSelectedNoAuth != null ? e.variantSelectedNoAuth.variantId : 0 , quantity: e.quantity)).toList()));
+          products: carts[i].product.map((e) => ProductAddOrderNoAuth(productId: e.id, isVariant: e.variantSelected != null ? 1 : 0, variantId: e.variantSelected != null ? e.variantSelected.id : 0 , quantity: e.quantity)).toList()));
     }
     debugPrint("COK 2");
     Map<String, dynamic> body = {
