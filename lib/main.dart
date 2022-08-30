@@ -414,7 +414,7 @@ class Config {
   static final String baseUrl =
       kDebugMode ? AppEnv.BASE_URL_DEBUG : AppEnv.BASE_URL;
   static final String adsKey =
-      kDebugMode ? AppEnv.BASE_URL_DEBUG : AppEnv.ADS_KEY;
+      kDebugMode ? AppEnv.ADS_KEY : AppEnv.ADS_KEY;
 
 }
 

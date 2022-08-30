@@ -80,7 +80,7 @@ class GridTwoProductListItem extends StatelessWidget {
               onTap: () {
                 recipentRepo.isFromWppDashboard(value: true);
                 recipentRepo.isFromWppDetailProductDetail(value: true);
-                context.beamToNamed('/wpp/productdetail/$warungSlug/${product.slug}/${product.id}',data: {
+                context.beamToNamed('/wpp/productdetail/$warungSlug/${product.slug}/${product != null ? product.id : productShop.productId}',data: {
                   'isFromDashboard':true
                 });
               },
