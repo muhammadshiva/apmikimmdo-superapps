@@ -121,8 +121,7 @@ class _HistorySaldoScreenState extends State<HistorySaldoScreen> {
                                     AppExt.pushScreen(
                                         context,
                                         DetailSaldoPenjualanScreen(
-                                            logId:
-                                                state.wallets[index].id));
+                                            logId: state.wallets[index].id));
                                   },
                                   child: Container(
                                     margin: EdgeInsets.only(bottom: 12),
@@ -173,13 +172,13 @@ class _HistorySaldoScreenState extends State<HistorySaldoScreen> {
                                               children: [
                                                 state.wallets[index].type ==
                                                         "in"
-                                                    ? Icon(EvaIcons.plus,
+                                                    ? Icon(EvaIcons.minus,
+                                                        size: 12,
+                                                        color: AppColor.red)
+                                                    : Icon(EvaIcons.plus,
                                                         size: 12,
                                                         color: AppColor
-                                                            .textPrimary)
-                                                    : Icon(EvaIcons.minus,
-                                                        size: 12,
-                                                        color: AppColor.red),
+                                                            .textPrimary),
                                                 SizedBox(width: 2),
                                                 Text(
                                                   state.wallets[index].amount,
@@ -190,9 +189,9 @@ class _HistorySaldoScreenState extends State<HistorySaldoScreen> {
                                                                           index]
                                                                       .type ==
                                                                   "in"
-                                                              ? AppColor
-                                                                  .textPrimary
-                                                              : AppColor.red,
+                                                              ? AppColor.red
+                                                              : AppColor
+                                                                  .textPrimary,
                                                           fontWeight:
                                                               FontWeight.bold),
                                                 ),
